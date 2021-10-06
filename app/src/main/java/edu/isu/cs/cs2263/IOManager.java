@@ -1,6 +1,7 @@
 package edu.isu.cs.cs2263;
 
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -8,15 +9,22 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class IOManager {
     public List readData(File filename){
+
+
+        Type listOfStudents = new TypeToken<ArrayList<Student>>() {}.getType();
+
+
         Gson gson = new Gson();
-        String json = filename.getName();
-        List<Student> studentList = gson.fromJson(json, List.class);
+        List<Student> studentList = gson.fromJson(filename.getName(), listOfStudents);
+
+
         return studentList;
 
 
