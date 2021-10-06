@@ -8,8 +8,10 @@ public class Student {
     private String lastName;
     private List<Course> studentCourses;
 
-    public Student(List<Course> studentCourses){
-        this.studentCourses = studentCourses;
+    List<Course> course;
+
+    public Student(){
+
 
     }
 
@@ -27,6 +29,14 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<Course> getCourses() {
+        return course;
+    }
+
+    public void setCourses(List<Course> course) {
+        this.course = course;
     }
 
     @Override
