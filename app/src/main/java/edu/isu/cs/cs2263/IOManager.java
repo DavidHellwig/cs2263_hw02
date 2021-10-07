@@ -30,7 +30,7 @@ public class IOManager {
 
     }
     public void writeData(File filename, List<Student> studentList){
-        studentList = new ArrayList<Student>();
+
 
 
         try {
