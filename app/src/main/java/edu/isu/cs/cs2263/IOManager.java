@@ -1,28 +1,29 @@
 package edu.isu.cs.cs2263;
 
 
+import com.google.common.io.Files;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class IOManager {
-    public List readData(){
+    public List<Student> readData() throws IOException {
 
 
         Type listOfStudents = new TypeToken<ArrayList<Student>>() {}.getType();
 
+        JsonReader jsonReader = new JsonReader(new FileReader("data.json"));
+
+
 
         Gson gson = new Gson();
-        List<Student> studentList = gson.fromJson("data.json", listOfStudents);
+        List<Student> studentList = gson.fromJson(jsonReader, listOfStudents);
 
 
         return studentList;
@@ -35,7 +36,7 @@ public class IOManager {
 
         try {
             FileWriter writer = new FileWriter(filename);
-            Gson gson = new GsonBuilder().create();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(studentList,writer);
             writer.flush();
             writer.close();

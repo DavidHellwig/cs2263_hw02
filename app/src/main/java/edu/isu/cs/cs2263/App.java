@@ -8,13 +8,15 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 public class App {//extends Application {
 
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         Student test = new Student();
         test.setFirstName("test");
         test.setLastName("test");
@@ -31,7 +33,7 @@ public class App {//extends Application {
 
 
         bla.writeData(new File("data.json"),students);
-        //bla.readData();
+        System.out.println(bla.readData());
 
 
 
