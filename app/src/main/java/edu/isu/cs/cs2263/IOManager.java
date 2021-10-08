@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class IOManager {
-    public List readData(File filename){
+    public List readData(){
 
 
         Type listOfStudents = new TypeToken<ArrayList<Student>>() {}.getType();
 
 
         Gson gson = new Gson();
-        List<Student> studentList = gson.fromJson(filename.getName(), listOfStudents);
+        List<Student> studentList = gson.fromJson("data.json", listOfStudents);
 
 
         return studentList;

@@ -8,7 +8,7 @@ public class Student {
     private String lastName;
     private List<Course> studentCourses;
 
-    List<Course> course;
+    List<Course> courses;
 
     public Student(){
 
@@ -32,12 +32,13 @@ public class Student {
     }
 
     public List<Course> getCourses() {
-        return course;
+        return courses;
     }
 
     public void setCourses(List<Course> course) {
-        this.course = course;
+        this.courses = course;
     }
+
 
     @Override
     public String toString() {

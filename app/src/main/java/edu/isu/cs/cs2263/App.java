@@ -23,12 +23,15 @@ public class App {//extends Application {
         testCourse.setSubject("CS");
         testCourse.setTitle("test title");
         test.setCourses(Collections.singletonList(testCourse));
+
         IOManager bla  = new IOManager();
         List<Student> students = new ArrayList<Student>();
         students.add(test);
 
 
+
         bla.writeData(new File("data.json"),students);
+        //bla.readData();
 
 
 
