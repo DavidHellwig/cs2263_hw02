@@ -9,5 +9,14 @@
         "title": "test title"
       }
     ]
-  }
-]
+  },
+  {
+    "firstName": "test",
+    "lastName": "test",
+    "courses": [
+      {
+        "number": 20,
+        "subject": "CS",
+        "title": "test title"
+      }
+]}]

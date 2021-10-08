@@ -32,7 +32,7 @@ public class App {//extends Application {
 
 
 
-        bla.writeData(new File("data.json"),students);
+        //bla.writeData(new File("data.json"),students);
         System.out.println(bla.readData());
 
 
