@@ -5,6 +5,9 @@
 package edu.isu.cs.cs2263;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -12,37 +15,21 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
-public class App {//extends Application {
+public class App extends Application {
 
 
 
-    public static void main(String[] args) throws IOException {
-        Student test = new Student();
-        test.setFirstName("test");
-        test.setLastName("test");
-        Course testCourse = new Course();
-        testCourse.setNumber(20);
-        testCourse.setSubject("CS");
-        testCourse.setTitle("test title");
-        test.setCourses(Collections.singletonList(testCourse));
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("HumanInterface.fxml"));
 
-        IOManager bla  = new IOManager();
-        List<Student> students = new ArrayList<Student>();
-        students.add(test);
+        Scene scenery = new Scene(parent);
 
-
-
-        //bla.writeData(new File("data.json"),students);
-        System.out.println(bla.readData());
+        primaryStage.setScene(scenery);
+        primaryStage.show();
 
 
 
     }
 
-    //@Override
-    //public void start(Stage primaryStage) {
-
-
-
-    }
-//}
+}
