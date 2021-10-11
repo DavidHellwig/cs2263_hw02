@@ -1,15 +1,20 @@
 package edu.isu.cs.cs2263;
 
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Controller {
 
@@ -23,6 +28,12 @@ public class Controller {
 
     @FXML private TableColumn<Student, String> nameColumn;
 
+    @FXML private TableView<Course> courseTable;
+
+    @FXML private TableColumn<Course, String> courseColumn;
+
+
+
 
 
 
@@ -35,23 +46,37 @@ public class Controller {
 
     @FXML
     void loadStudentList(ActionEvent event) throws IOException {
-        initialize();
-
-    }
-
-    public void initialize () throws IOException {
         nameColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
 
 
 
+
         studentTable.setItems(getStudents());
+
+
     }
+
+
+
 
     private ObservableList<Student> getStudents() throws IOException {
         IOManager ioManager = new IOManager();
 
         ObservableList<Student> students = FXCollections.observableArrayList(ioManager.readData());
         return students;
+    }
+
+    private void handleRowClick(MouseEvent mouseEvent, IndexedCell<Student> cell){
+        if (cell.isSelected()){
+            courseColumn.setCellValueFactory(new PropertyValueFactory<>("toString"));
+        }
+    }
+
+    private ObservableList<Course> getCourse() throws IOException {
+        ObservableList<Student> studentList = getStudents();
+        for (Student element : studentList){
+            ;
+        }
     }
 
 }

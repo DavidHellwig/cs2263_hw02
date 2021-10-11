@@ -13,7 +13,7 @@
             <Button fx:id="btnClick" layoutY="2.0" mnemonicParsing="false" onAction="#loadStudentList" text="Load Student List" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <TableView layoutX="397.0" layoutY="100.0" prefHeight="200.0" prefWidth="184.0" AnchorPane.rightAnchor="19.0">
               <columns>
-                <TableColumn prefWidth="150.0" />
+                <TableColumn prefWidth="150.0" text="Courses" />
                 <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
               </columns>
             </TableView>
