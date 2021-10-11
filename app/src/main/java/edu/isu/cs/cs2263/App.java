@@ -10,10 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.*;
 
 public class App extends Application {
 
@@ -21,7 +18,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("HumanInterface.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/HumanInterface.fxml"));
 
         Scene scenery = new Scene(parent);
 

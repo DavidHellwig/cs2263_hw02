@@ -10,17 +10,20 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class Controller {
 
     @FXML
     private Button btnClick;
 
+    @FXML
+    private Button btnTwo;
+
     @FXML private TableView<Student> studentTable;
 
     @FXML private TableColumn<Student, String> nameColumn;
+
+
 
 
 
@@ -31,12 +34,15 @@ public class Controller {
     }
 
     @FXML
-    void loadStudentList(ActionEvent event) {
+    void loadStudentList(ActionEvent event) throws IOException {
+        initialize();
 
     }
 
-    public void initialize (URL url, ResourceBundle rb) throws IOException {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+    public void initialize () throws IOException {
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
+
+
 
         studentTable.setItems(getStudents());
     }
