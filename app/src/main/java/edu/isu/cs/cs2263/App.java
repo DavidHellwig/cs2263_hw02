@@ -4,6 +4,10 @@
 
 package edu.isu.cs.cs2263;
 
+/**
+ * @author David Hellwig
+ */
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,7 +1,7 @@
 package edu.isu.cs.cs2263;
-
-
-import com.google.common.io.Files;
+/**
+ * @author David Hellwig
+ */
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -12,10 +12,20 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * this class object reads and writes information from the provided json file
+ */
 public class IOManager {
+    /**
+     *
+     * @return returns list of zero or more students
+     * @throws IOException
+     */
     public List<Student> readData() throws IOException {
 
-
+        /**
+         * creates new type of list for class Student
+         */
         Type listOfStudents = new TypeToken<ArrayList<Student>>() {}.getType();
 
         JsonReader jsonReader = new JsonReader(new FileReader("data.json"));
@@ -30,10 +40,18 @@ public class IOManager {
 
 
     }
+
+    /**
+     *
+     * @param filename name of the json file
+     * @param studentList List of students to write to the file
+     */
     public void writeData(File filename, List<Student> studentList){
 
 
-
+        /**
+         * writes out provided student list to json file
+         */
         try {
             FileWriter writer = new FileWriter(filename);
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

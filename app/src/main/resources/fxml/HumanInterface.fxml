@@ -11,15 +11,14 @@
          <children>
             <Button fx:id="btnTwo" layoutX="542.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitSystem" text="EXIT" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Button fx:id="btnClick" layoutY="2.0" mnemonicParsing="false" onAction="#loadStudentList" text="Load Student List" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <TableView layoutX="397.0" layoutY="100.0" prefHeight="200.0" prefWidth="184.0" AnchorPane.rightAnchor="19.0">
+            <TableView fx:id="courseTable" layoutX="167.0" layoutY="100.0" prefHeight="200.0" prefWidth="433.0" AnchorPane.rightAnchor="0.0">
               <columns>
-                <TableColumn prefWidth="150.0" text="Courses" />
-                <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                <TableColumn fx:id="courseColumn" prefWidth="432.0" text="Courses" />
               </columns>
             </TableView>
-            <TableView fx:id="studentTable" layoutX="8.0" layoutY="100.0" prefHeight="200.0" prefWidth="124.0" AnchorPane.leftAnchor="0.0">
+            <TableView fx:id="studentTable" layoutX="8.0" layoutY="100.0" onMouseClicked="#loadCourses" prefHeight="200.0" prefWidth="126.0" AnchorPane.leftAnchor="0.0">
               <columns>
-                <TableColumn fx:id="nameColumn" prefWidth="123.0" text="Student Name" />
+                <TableColumn fx:id="nameColumn" prefWidth="123.0" text="First Name" />
               </columns>
             </TableView>
          </children>

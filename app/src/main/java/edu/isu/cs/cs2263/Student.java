@@ -1,7 +1,12 @@
 package edu.isu.cs.cs2263;
-
+/**
+ * @author David Hellwig
+ */
 import java.util.List;
 
+/**
+ * this class object holds student names, and a list of courses
+ */
 public class Student {
     private String firstName;
 
@@ -15,9 +20,11 @@ public class Student {
 
     }
 
+
     public String getFirstName() {
         return firstName;
     }
+
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -39,12 +46,13 @@ public class Student {
         this.courses = course;
     }
 
-
+    /**
+     *
+     * @return Returns full student name
+     */
     @Override
     public String toString() {
-        return "Student{" +
-                "" + firstName + '\'' +
-                " " + lastName + '\'' +
-                '}';
+        return firstName + '\'' +
+                " " + lastName + '\'';
     }
 }

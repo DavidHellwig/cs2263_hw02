@@ -1,21 +1,20 @@
 package edu.isu.cs.cs2263;
-
-import javafx.beans.InvalidationListener;
+/**
+ * @author David Hellwig
+ */
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
+/**
+ * this class controls the GUI
+ */
 public class Controller {
 
     @FXML
@@ -26,57 +25,66 @@ public class Controller {
 
     @FXML private TableView<Student> studentTable;
 
+
     @FXML private TableColumn<Student, String> nameColumn;
 
     @FXML private TableView<Course> courseTable;
 
     @FXML private TableColumn<Course, String> courseColumn;
 
-
-
-
-
-
-
+    /**
+     *
+     * @param event mouse click event
+     */
     @FXML
     void exitSystem(ActionEvent event) {
         System.exit(0);
 
     }
 
+    /**
+     *
+     * @param event mouse click even
+     * @throws IOException throws io exception if json file is missing
+     */
     @FXML
     void loadStudentList(ActionEvent event) throws IOException {
+
         nameColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("firstName"));
 
-
-
-
         studentTable.setItems(getStudents());
-
-
     }
 
-
-
-
+    /**
+     *
+     * @return returns list of students from json file
+     * @throws IOException throws io exception when json file is missing
+     */
     private ObservableList<Student> getStudents() throws IOException {
+
         IOManager ioManager = new IOManager();
 
         ObservableList<Student> students = FXCollections.observableArrayList(ioManager.readData());
+
         return students;
     }
 
-    private void handleRowClick(MouseEvent mouseEvent, IndexedCell<Student> cell){
-        if (cell.isSelected()){
-            courseColumn.setCellValueFactory(new PropertyValueFactory<>("toString"));
-        }
+    public void loadCourses(MouseEvent mouseEvent) throws IOException {
+        courseColumn.setCellValueFactory(new PropertyValueFactory<Course, String>("subject"));
+
+        courseTable.setItems(getCourses());
+
     }
 
-    private ObservableList<Course> getCourse() throws IOException {
-        ObservableList<Student> studentList = getStudents();
-        for (Student element : studentList){
-            ;
+    private ObservableList<Course> getCourses() throws IOException {
+        IOManager ioManager = new IOManager();
+        ObservableList<Student> students = FXCollections.observableArrayList(ioManager.readData());
+        ObservableList<Course> courses = null;
+        for (Student student : students){
+            courses.add((Course) getCourses());
         }
-    }
 
+
+        return courses;
+    }
 }
