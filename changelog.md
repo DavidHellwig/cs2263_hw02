@@ -1,5 +1,10 @@
 #Changelog
 
+##[2.0.0] - 2021-10-12
+###Added
+-GUI interface
+-Functionality to read a list of students from the provided json file (data.json).
+
 ##[1.0.0] - 2021-09-20
 ###Added
 -essential gradle files
