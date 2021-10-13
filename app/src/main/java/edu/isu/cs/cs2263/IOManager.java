@@ -3,13 +3,19 @@ package edu.isu.cs.cs2263;
  * @author David Hellwig
  */
 import com.google.common.reflect.TypeToken;
+
 import com.google.gson.Gson;
+
 import com.google.gson.GsonBuilder;
+
 import com.google.gson.stream.JsonReader;
 
 import java.io.*;
+
 import java.lang.reflect.Type;
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -18,8 +24,9 @@ import java.util.List;
 public class IOManager {
     /**
      *
-     * @return returns list of zero or more students
+     * @return returns list of zero or more students from the json data
      * @throws IOException
+     * This method reads json data from the json file
      */
     public List<Student> readData() throws IOException {
 
@@ -45,6 +52,7 @@ public class IOManager {
      *
      * @param filename name of the json file
      * @param studentList List of students to write to the file
+     *This method writes to the json data
      */
     public void writeData(File filename, List<Student> studentList){
 

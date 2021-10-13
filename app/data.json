@@ -1,22 +1,37 @@
 [
   {
-    "firstName": "shit",
-    "lastName": "test",
+    "firstName": "Isaac",
+    "lastName": "Gribble",
     "courses": [
       {
-        "number": 20,
+        "number": 9999,
         "subject": "CS",
-        "title": "test title"
+        "title": "Web Development with Sega Saturn Assembly"
+      },
+      {
+        "number": 1678,
+        "subject": "CS",
+        "title": "Web Development with Sticks and Stones"
+      },
+      {
+        "number": 2021,
+        "subject": "MATH",
+        "title": "Calculus 30: Intro to infinite variable calculus"
       }
     ]
   },
   {
-    "firstName": "fuck",
-    "lastName": "test",
+    "firstName": "Migraine",
+    "lastName": "Suffering",
     "courses": [
       {
-        "number": 20,
+        "number": 9999,
+        "subject": "MATH",
+        "title": "Calculus 99: Calculus with JavaScript"
+      },
+      {
+        "number": 9696,
         "subject": "CS",
-        "title": "test title"
+        "title": "Intro to Programing with F#"
       }
 ]}]

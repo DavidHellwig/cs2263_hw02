@@ -17,6 +17,10 @@ public class Course {
 
     }
 
+    /**
+     * Getters and setters
+     */
+
     public int getNumber() {
         return number;
     }

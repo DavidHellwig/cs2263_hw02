@@ -9,28 +9,64 @@ package edu.isu.cs.cs2263;
  */
 
 import javafx.application.Application;
+
 import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
+
 import javafx.scene.Scene;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class App extends Application {
+//    private App(){}
+//
+//    private static final class Helper{
+//        private static final App INSTANCE = new App();
+//    }
+//    public static  App instance(){
+//        return Helper.INSTANCE;
+//    }
+    public static App myApp;
+
+    public App(){
+        if (myApp == null){
+            myApp = this;
+        }
+        else {
+            throw new RuntimeException("fuck");
+        }
+    }
 
 
 
+    /**
+     *
+     * @param primaryStage primary stage for app
+     * @throws IOException throws exception if json file is missing
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         Parent parent = FXMLLoader.load(getClass().getResource("/fxml/HumanInterface.fxml"));
 
         Scene scenery = new Scene(parent);
 
         primaryStage.setScene(scenery);
+
         primaryStage.show();
 
 
 
     }
+    public static void main(String[] args) {
+        App.launch();
+    }
+
+
+
+
 
 }
