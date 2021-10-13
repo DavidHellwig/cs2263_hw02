@@ -4,40 +4,69 @@
 
 package edu.isu.cs.cs2263;
 
+/**
+ * @author David Hellwig
+ */
+
 import javafx.application.Application;
+
+import javafx.fxml.FXMLLoader;
+
+import javafx.scene.Parent;
+
+import javafx.scene.Scene;
+
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.util.*;
+import java.io.IOException;
 
-public class App {//extends Application {
+public class App extends Application {
+//    private App(){}
+//
+//    private static final class Helper{
+//        private static final App INSTANCE = new App();
+//    }
+//    public static  App instance(){
+//        return Helper.INSTANCE;
+//    }
+    public static App myApp;
+
+    public App(){
+        if (myApp == null){
+            myApp = this;
+        }
+        else {
+            throw new RuntimeException("fuck");
+        }
+    }
 
 
 
-    public static void main(String[] args){
-        Student test = new Student();
-        test.setFirstName("test");
-        test.setLastName("test");
-        Course testCourse = new Course();
-        testCourse.setNumber(20);
-        testCourse.setSubject("CS");
-        testCourse.setTitle("test title");
-        test.setCourses(Collections.singletonList(testCourse));
-        IOManager bla  = new IOManager();
-        List<Student> students = new ArrayList<Student>();
-        students.add(test);
+    /**
+     *
+     * @param primaryStage primary stage for app
+     * @throws IOException throws exception if json file is missing
+     */
+    @Override
+    public void start(Stage primaryStage) throws IOException {
 
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/HumanInterface.fxml"));
 
-        bla.writeData(new File("data.json"),students);
+        Scene scenery = new Scene(parent);
+
+        primaryStage.setScene(scenery);
+
+        primaryStage.show();
 
 
 
     }
-
-    //@Override
-    //public void start(Stage primaryStage) {
-
-
-
+    public static void main(String[] args) {
+        App.launch();
     }
-//}
+
+
+
+
+
+}

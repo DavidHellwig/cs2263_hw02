@@ -1,1 +1,37 @@
-[{"firstName":"test","lastName":"test","course":[{"number":20,"subject":"CS","title":"test title"}]}]
+[
+  {
+    "firstName": "Isaac",
+    "lastName": "Gribble",
+    "courses": [
+      {
+        "number": 9999,
+        "subject": "CS",
+        "title": "Web Development with Sega Saturn Assembly"
+      },
+      {
+        "number": 1678,
+        "subject": "CS",
+        "title": "Web Development with Sticks and Stones"
+      },
+      {
+        "number": 2021,
+        "subject": "MATH",
+        "title": "Calculus 30: Intro to infinite variable calculus"
+      }
+    ]
+  },
+  {
+    "firstName": "Migraine",
+    "lastName": "Suffering",
+    "courses": [
+      {
+        "number": 9999,
+        "subject": "MATH",
+        "title": "Calculus 99: Calculus with JavaScript"
+      },
+      {
+        "number": 9696,
+        "subject": "CS",
+        "title": "Intro to Programing with F#"
+      }
+]}]

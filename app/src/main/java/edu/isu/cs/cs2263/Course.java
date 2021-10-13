@@ -1,5 +1,11 @@
 package edu.isu.cs.cs2263;
+/**
+ * @author David Hellwig
+ */
 
+/**
+ * this class objects holds course information
+ */
 public class Course {
     private int number;
 
@@ -10,6 +16,10 @@ public class Course {
     public Course(){
 
     }
+
+    /**
+     * Getters and setters
+     */
 
     public int getNumber() {
         return number;
@@ -35,6 +45,11 @@ public class Course {
         this.title = title;
     }
 
+
+    /**
+     *
+     * @return full course information
+     */
     @Override
     public String toString() {
         return "" + title +
