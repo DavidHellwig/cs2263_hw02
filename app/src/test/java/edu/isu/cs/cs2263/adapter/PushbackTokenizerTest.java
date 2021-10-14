@@ -48,6 +48,20 @@ class PushbackTokenizerTest {
         assertEquals("1", pushbackTokenizerImplementation.nextToken());
     }
 
+    @Test void nextTokenTest(){
+        PushbackTokenizerImplementation pushbackTokenizerImplementation = new PushbackTokenizerImplementation("1 2 3");
+        pushbackTokenizerImplementation.nextToken();
+        pushbackTokenizerImplementation.nextToken();
+        assertEquals("3", pushbackTokenizerImplementation.nextToken());
+    }
+
+    @Test void emptyStringTest(){
+        PushbackTokenizerImplementation pushbackTokenizerImplementation = new PushbackTokenizerImplementation("");
+        assertFalse(pushbackTokenizerImplementation.hasMoreTokens());
+    }
+
+
+
 
 
 }
