@@ -11,6 +11,7 @@ Using powershell, or bash, type "gradle run"
 To load a list of students from the provided json file click on the "Load Student List" button. 
 To read a list of courses from a student, click on the student in the list of students
 To exit the application, click exit. 
+To change the json data, locate json file under the app directly, and directly edit it with a text editor or IDE 
 
 		
 

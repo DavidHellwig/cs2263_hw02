@@ -1,5 +1,12 @@
 #Changelog
 
+##[2.1.0] - 2021-10-12
+###Added
+-Tests for the PushbackTokenizer implementation
+
+###Removed
+-Empty tests for app class
+
 ##[2.0.1] - 2021-10-12
 ###Added
 -GUI interface
